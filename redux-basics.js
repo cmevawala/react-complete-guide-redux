@@ -35,9 +35,14 @@ const store = createStore(rootReducer); // Store needs to be initialized with th
 console.log(store.getState());
 
 
+// Subscription
+// Subscribe method takes an argument as function it will be called everytime whenever the state is updated
+store.subscribe(() => {
+    console.log('[Subscription]:', store.getState());
+});
+
+
 // Dispatching Action
 store.dispatch({type: 'INC_COUNTER'});
 store.dispatch({type: 'ADD_COUNTER', value: 10});
 console.log(store.getState());
-
-// Subscription
