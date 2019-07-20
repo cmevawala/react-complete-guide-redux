@@ -28,7 +28,8 @@ const logger = store => {
     }
 };
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(<Provider store={store}> <App /> </Provider>, document.getElementById('root'));
